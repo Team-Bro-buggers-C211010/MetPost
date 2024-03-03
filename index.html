@@ -1,81 +1,228 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MetPost Online</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="container mx-auto">
-        <nav class="mt-5">
-            <div class="navbar bg-base-100">
-                <div class="navbar-start">
-                  <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </div>
-                    <div class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center">
-                            <img src="./images/home.png" alt="">
-                        </div>
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center">
-                            <img src="./images/pen.png" alt="" class="w-[]">
-                        </div>
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center">
-                            <img src="./images/log.png" alt="" class="w-[]">
-                        </div>
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center">
-                            <img src="./images/flag.png" alt="" class="w-[]">
-                        </div>
-                    </div>
-                  </div>
-                  <a class="btn btn-ghost text-xl text-[#12132D] fontMulish font-black text-2xl md:text-4xl">MetPost</a>
+      <nav class="mt-5">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <div
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <div
+                  class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center"
+                >
+                  <img src="./images/home.png" alt="" />
                 </div>
-                <div class="navbar-end">
-                    <div class="hidden lg:flex gap-3">
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top" data-tip="Home">
-                            <img src="./images/home.png" alt="">
-                        </div>
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top" data-tip="Create">
-                            <img src="./images/pen.png" alt="" class="w-[]">
-                        </div>
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top" data-tip="User">
-                            <img src="./images/log.png" alt="" class="w-[]">
-                        </div>
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top" data-tip="Tag">
-                            <img src="./images/flag.png" alt="" class="w-[]">
-                        </div>
-                    </div>
-                  <a class="ml-3 px-6 md:px-10 btn rounded-full h-14 bg-[#797DFC] text-white fontMulish text-lg md:text-xl font-bold">Sign In</a>
+                <div
+                  class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center"
+                >
+                  <img src="./images/pen.png" alt="" class="w-[]" />
+                </div>
+                <div
+                  class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center"
+                >
+                  <img src="./images/log.png" alt="" class="w-[]" />
+                </div>
+                <div
+                  class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center"
+                >
+                  <img src="./images/flag.png" alt="" class="w-[]" />
                 </div>
               </div>
-        </nav>
-        <!-- Banner Section -->
-        <section class="mt-14 container mx-auto">
-            <div class="hero min-h-screen rounded-[2rem] bg-[#12132D] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-contain w-full fontMulish">
-                <div class="hero-content flex flex-col lg:flex-row-reverse justify-around w-full">
-                  <div class="bg-white rounded-[2rem] p-12 fontMulish text-xl md:text-2xl">
-                    <div class="flex justify-between gap-8 md:gap-14 fontMulish"><p>Registered Users</p><p>01</p></div>
-                    <div class="flex justify-between gap-8 md:gap-14 fontMulish"><p>Forum</p><p>05</p></div>
-                    <div class="flex justify-between gap-8 md:gap-14 fontMulish"><p>Topics</p><p>01</p></div>
-                    <div class="flex justify-between gap-8 md:gap-14 fontMulish"><p>Replies</p><p>01</p></div>
-                  </div>
-                  <div class="fontMulish">
-                    <h1 class="font-black text-white text-4xl md:text-7xl fontMulish">Welcome to the <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#797DFC] to-[#797DFC20] ">MetPost</span> Forum</h1>
-                    <p class="py-6 text-xl font-medium text-[#FFFFFFCC]">Share your favorite opinion and win and wp <br>forum coffee mug!</p>
-                    <div id="inputField">
-                        <label class="input text-xs md:text-base flex items-center md:gap-2 justify-between rounded-full text-[#03071280] fontMulish" id="labelInput">
-                          <input type="text" class="border-0" id="inputCoupon" placeholder="Search here anything">
-                          <button class="bg-[#797DFC] px-7 py-2 rounded-full text-xs md:text-base text-white font-semibold fontMulish" id="apply">Search</button>
-                        </label>
-                      </div>
-                  </div>
-                </div>
+            </div>
+            <a
+              class="btn btn-ghost text-xl text-[#12132D] fontMulish font-black text-2xl md:text-4xl"
+              >MetPost</a
+            >
+          </div>
+          <div class="navbar-end">
+            <div class="hidden lg:flex gap-3">
+              <div
+                class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top"
+                data-tip="Home"
+              >
+                <img src="./images/home.png" alt="" />
               </div>
-        </section>
+              <div
+                class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top"
+                data-tip="Create"
+              >
+                <img src="./images/pen.png" alt="" class="w-[]" />
+              </div>
+              <div
+                class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top"
+                data-tip="User"
+              >
+                <img src="./images/log.png" alt="" class="w-[]" />
+              </div>
+              <div
+                class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top"
+                data-tip="Tag"
+              >
+                <img src="./images/flag.png" alt="" class="w-[]" />
+              </div>
+            </div>
+            <a
+              class="ml-3 px-6 md:px-10 btn rounded-full h-14 bg-[#797DFC] text-white fontMulish text-lg md:text-xl font-bold"
+              >Sign In</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!-- Banner Section -->
+      <section class="mt-14 container mx-auto px-3 md:px-0">
+        <div
+          class="hero min-h-screen rounded-[2rem] bg-[#12132D] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-contain w-full fontMulish"
+        >
+          <div
+            class="hero-content flex flex-col lg:flex-row-reverse justify-around w-full"
+          >
+            <div
+              class="bg-white rounded-[2rem] p-12 fontMulish text-xl md:text-2xl"
+            >
+              <div class="flex justify-between gap-8 md:gap-14 fontMulish">
+                <p>Registered Users</p>
+                <p>01</p>
+              </div>
+              <div class="flex justify-between gap-8 md:gap-14 fontMulish">
+                <p>Forum</p>
+                <p>05</p>
+              </div>
+              <div class="flex justify-between gap-8 md:gap-14 fontMulish">
+                <p>Topics</p>
+                <p>01</p>
+              </div>
+              <div class="flex justify-between gap-8 md:gap-14 fontMulish">
+                <p>Replies</p>
+                <p>01</p>
+              </div>
+            </div>
+            <div class="fontMulish">
+              <h1 class="font-black text-white text-4xl md:text-7xl fontMulish">
+                Welcome to the <br /><span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-[#797DFC] to-[#797DFC20]"
+                  >MetPost</span
+                >
+                Forum
+              </h1>
+              <p class="py-6 text-xl font-medium text-[#FFFFFFCC]">
+                Share your favorite opinion and win and wp <br />forum coffee
+                mug!
+              </p>
+              <div id="inputField">
+                <label
+                  class="input text-xs md:text-base flex items-center md:gap-2 justify-between rounded-full text-[#03071280] fontMulish"
+                  id="labelInput"
+                >
+                  <input
+                    type="text"
+                    class="border-0"
+                    id="inputCoupon"
+                    placeholder="Search here anything"
+                  />
+                  <button
+                    class="bg-[#797DFC] px-7 py-2 rounded-full text-xs md:text-base text-white font-semibold fontMulish"
+                    id="apply"
+                  >
+                    Search
+                  </button>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </header>
-</body>
+    <main class="container mx-auto">
+      <!-- Lets Discuss Section -->
+      <section class="mt-14 md:mt-28 px-4 md:px-0">
+        <h1
+          class="text-[#12132D] fontMulish text-3xl md:text-5xl mb-6 font-black text-center"
+        >
+          Let’s Discuss
+        </h1>
+        <p
+          class="fontInter text-[#12132D99] text-base md:text-lg font-normal text-center"
+        >
+          Yes, you can run unit tests and view the results directly within the
+          app. The <br />integrated testing features allow for a streamlined .
+        </p>
+        <div class="flex flex-col md:flex-row">
+          <div class="mt-12 flex flex-col gap-y-6">
+            <div class="bg-[#F3F3F5] w-full p-10 rounded-3xl flex gap-x-6 gap-y-4 flex-col md:flex-row">
+              <div
+                class="bg-white w-20 h-20 rounded-2xl bg-[url('./images/shovan.jpg')] bg-cover bg-no-repeat relative"
+              >
+                <div
+                  class="rounded-full bg-[#10B981] w-5 h-5 absolute -right-1 -top-1"
+                ></div>
+              </div>
+              <div>
+                <div class="flex gap-5 text-[#12132DCC] fontInter text-sm mb-3">
+                  <p># Music</p>
+                  <p>Author : Awlad Hossain</p>
+                </div>
+                <h1 class="text-[#12132D] text-lg md:text-xl font-bold fontMulish mb-4">10 Kids Unaware of Their Halloween Costume</h1>
+                <p class="text-[#12132D99] text-base font-normal mb-5">
+                  It’s one thing to subject yourself to ha Halloween costume
+                  mishap because, <br>hey that’s your prerogative
+                </p>
+                <hr class="border-dashed"/>
+                <div class="flex justify-between mt-5">
+                  <div class="flex gap-x-2 md:gap-x-6 items-center text-sm md:text-base">
+                    <div class="flex gap-x-1 md:gap-x-3 items-center">
+                      <img src="./images/comment.png" alt="" />
+                      <p>560</p>
+                    </div>
+                    <div class="flex gap-x-1 md:gap-x-3 items-center">
+                      <img src="./images/views.png" alt="" />
+                      <p>1,568</p>
+                    </div>
+                    <div class="flex gap-x-1 md:gap-x-3 items-center">
+                      <img src="./images/views.png" alt="" />
+                      <p>1,568</p>
+                    </div>
+                  </div>
+                  <img src="./images/email 1.png" alt="">
+                  </div>
+                  </div>
+                  <div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
