@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MetPost Online</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="container mx-auto">
@@ -35,16 +36,16 @@
                 </div>
                 <div class="navbar-end">
                     <div class="hidden lg:flex gap-3">
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center">
+                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top" data-tip="Home">
                             <img src="./images/home.png" alt="">
                         </div>
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center">
+                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top" data-tip="Create">
                             <img src="./images/pen.png" alt="" class="w-[]">
                         </div>
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center">
+                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top" data-tip="User">
                             <img src="./images/log.png" alt="" class="w-[]">
                         </div>
-                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center">
+                        <div class="rounded-full w-14 h-14 flex justify-center bg-[#12132D08] border-[#0307121A] border items-center tooltip hover:tooltip-open tooltip-top" data-tip="Tag">
                             <img src="./images/flag.png" alt="" class="w-[]">
                         </div>
                     </div>
@@ -52,6 +53,29 @@
                 </div>
               </div>
         </nav>
+        <!-- Banner Section -->
+        <section class="mt-14 container mx-auto">
+            <div class="hero min-h-screen rounded-[2rem] bg-[#12132D] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-contain w-full fontMulish">
+                <div class="hero-content flex flex-col lg:flex-row-reverse justify-around w-full">
+                  <div class="bg-white rounded-[2rem] p-12 fontMulish text-xl md:text-2xl">
+                    <div class="flex justify-between gap-8 md:gap-14 fontMulish"><p>Registered Users</p><p>01</p></div>
+                    <div class="flex justify-between gap-8 md:gap-14 fontMulish"><p>Forum</p><p>05</p></div>
+                    <div class="flex justify-between gap-8 md:gap-14 fontMulish"><p>Topics</p><p>01</p></div>
+                    <div class="flex justify-between gap-8 md:gap-14 fontMulish"><p>Replies</p><p>01</p></div>
+                  </div>
+                  <div class="fontMulish">
+                    <h1 class="font-black text-white text-4xl md:text-7xl fontMulish">Welcome to the <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#797DFC] to-[#797DFC20] ">MetPost</span> Forum</h1>
+                    <p class="py-6 text-xl font-medium text-[#FFFFFFCC]">Share your favorite opinion and win and wp <br>forum coffee mug!</p>
+                    <div id="inputField">
+                        <label class="input text-xs md:text-base flex items-center md:gap-2 justify-between rounded-full text-[#03071280] fontMulish" id="labelInput">
+                          <input type="text" class="border-0" id="inputCoupon" placeholder="Search here anything">
+                          <button class="bg-[#797DFC] px-7 py-2 rounded-full text-xs md:text-base text-white font-semibold fontMulish" id="apply">Search</button>
+                        </label>
+                      </div>
+                  </div>
+                </div>
+              </div>
+        </section>
     </header>
 </body>
 </html>
