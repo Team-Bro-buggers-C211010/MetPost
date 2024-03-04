@@ -10,9 +10,9 @@ const displayPosts = posts => {
 
     const letsDiscussPostContainer = document.getElementById('postContainer');
     /// clear the container at the biginning of the load.
-    //letsDiscussPostContainer.innerHTML = "";
+    letsDiscussPostContainer.innerHTML = "";
     posts.forEach(post =>{
-        console.log(post);
+        
         const activeStatus = post.isActive;
         let color;
         if(activeStatus){
@@ -65,6 +65,50 @@ const displayPosts = posts => {
         letsDiscussPostContainer.appendChild(postCard);
     })
 }
+
+const loadLatestPostData = async() => {
+    const response =await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
+const data = await response.json();
+displayLatestPosts(data);
+}
+
+const displayLatestPosts = data => {
+    const latestPostContainer = document.getElementById("latestPostContain");
+    data.forEach(post =>{
+        console.log(post);
+        let designation,date;
+        if(post.author.designation === undefined)
+        {
+            designation = "Unknown";
+        }
+        else 
+        {
+            designation = post.author.designation;
+        }
+        if(post.author.posted_date === undefined){
+            date = "No publish date";
+        }
+        else 
+        {
+            date = post.author.posted_date;
+        }
+        const latestCard = document.createElement("div");
+        latestCard.classList = `card max-w-96 bg-white shadow-xl border border-[#12132D26] p-6`;
+        latestCard.innerHTML = `
+        <figure><img class="rounded-3xl" src="${post.cover_image}" alt="Shoes" /></figure>
+            <div>
+              <div class="flex gap-x-2 mt-6 mb-3"><img src="./images/calender.png" alt=""><p class="fontMulish text-[#12132D99]">${date}</p></div>
+              <h2 class="mb-3 text-[#12132D] text-lg font-extrabold fontMulish">${post.title}</h2>
+              <p class="mb-4 text-[#12132D] fontMulish">${post.description}</p>
+              <div class="flex gap-x-4"><img class="w-11 h-11 rounded-full" src="${post.profile_image}" alt=""> <div><h3 class="fontMulish font-bold text-[#12132D]">${post.author.name}</h3>
+              <p class="fontMulish text-sm text-[#12132D99]">${designation}</p></div></div>
+            </div>
+        `;
+        latestPostContainer.appendChild(latestCard);
+    });
+}
+
+loadLatestPostData();
 // let postCardArray =document.querySelectorAll(".card");
 // for(let i = 0; i < postCardArray.length; i++){
 //     const postCard = postCardArray[i];
@@ -91,10 +135,24 @@ posts.forEach(post=>{
         `;
         setReadCounter();
         titleContainer.appendChild(titleDiv);
-
     }
 })
 } 
+
+function loadDataBasedCategory(){
+    const searchCategory = document.getElementById("inputCoupon").value;
+    document.getElementById("inputCoupon").value="";
+    loadData(searchCategory);
+    const titleContainer =document.getElementById('titleContainer');
+    titleContainer.innerHTML = "";
+    counter = 0;
+    setReadCounter()
+}
+
+document.getElementById("apply").addEventListener("click", function() {
+    loadDataBasedCategory();
+});
+
 function setReadCounter(){
     const countRead = document.getElementById('addToTitleCount');
     countRead.innerHTML = counter;
