@@ -178,48 +178,14 @@
           Yes, you can run unit tests and view the results directly within the
           app. The <br />integrated testing features allow for a streamlined .
         </p>
+
+        <!-- Loading Screen -->
+        <div class="hidden mt-24 flex justify-center" id="loader">
+          <span class="w-96 h-36 loading loading-bars loading-lg"></span>
+        </div>
+
         <div class="mt-12 flex flex-col md:flex-row gap-x-28 justify-between items-start">
           <div id="postContainer" class="flex flex-col gap-y-6">
-            <!-- <div class="bg-[#F3F3F5] w-full p-10 rounded-3xl flex gap-x-6 gap-y-4 flex-col md:flex-row">
-              <div
-                class="bg-white w-20 h-20 rounded-2xl bg-[url('./images/shovan.jpg')] bg-cover bg-no-repeat relative"
-              >
-                <div
-                  class="rounded-full bg-[#10B981] w-5 h-5 absolute -right-1 -top-1"
-                ></div>
-              </div>
-              <div>
-                <div class="flex gap-5 text-[#12132DCC] fontInter text-sm mb-3">
-                  <p># Music</p>
-                  <p>Author : Awlad Hossain</p>
-                </div>
-                <h1 class="text-[#12132D] text-lg md:text-xl font-bold fontMulish mb-4">10 Kids Unaware of Their Halloween Costume</h1>
-                <p class="text-[#12132D99] text-base font-normal mb-5">
-                  It’s one thing to subject yourself to ha Halloween costume
-                  mishap because, <br>hey that’s your prerogative
-                </p>
-                <hr class="border-dashed"/>
-                <div class="flex justify-between mt-5">
-                  <div class="flex gap-x-2 md:gap-x-6 items-center text-sm md:text-base">
-                    <div class="flex gap-x-1 md:gap-x-3 items-center">
-                      <img src="./images/comment.png" alt="" />
-                      <p>560</p>
-                    </div>
-                    <div class="flex gap-x-1 md:gap-x-3 items-center">
-                      <img src="./images/views.png" alt="" />
-                      <p>1,568</p>
-                    </div>
-                    <div class="flex gap-x-1 md:gap-x-3 items-center">
-                      <img src="./images/views.png" alt="" />
-                      <p>1,568</p>
-                    </div>
-                  </div>
-                  <a href="" onclick=""><img src="./images/email 1.png" alt=""></a>
-                  </div>
-                  </div>
-                  <div>
-                </div>
-              </div> -->
             </div>
             <!-- Title Part -->
             <div class="mt-5 md:mt-0 max-w-[500px] md:w-[500px] bg-[#12132D0D] rounded-3xl p-6">
@@ -228,9 +194,6 @@
                 <div class="flex fontInter text-[#12132D99] w-44 gap-x-2"><img src="./images/markRight.png" alt=""><p>Mark as read (<span id="addToTitleCount">0</span>)</p></div>
               </div>
               <div id="titleContainer">
-                <!-- <div class="flex justify-between bg-white rounded-2xl p-4 mb-4">
-                  <div><h1>10 Kids Unaware of Their Halloween Costume</h1></div>
-                  <div class="flex items-center gap-2 mx-4"><img src="./images/views.png" alt=""><p>1,568</p></div> -->
                 </div>
               </div>
             </div>
@@ -265,36 +228,6 @@
         Yes, you can run unit tests and view the results directly within the app. The <br>integrated testing features allow for a streamlined .
         </p>
         <div class="mt-12 flex flex-col md:flex-row justify-center gap-12" id="latestPostContain">
-          <!-- <div class="card max-w-96 bg-white shadow-xl border border-[#12132D26] p-6">
-            <figure><img class="rounded-3xl" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-            <div>
-              <div class="flex gap-x-2 mt-6 mb-3"><img src="./images/calender.png" alt=""><p class="fontMulish text-[#12132D99]">29 January 2024</p></div>
-              <h2 class="mb-3 text-[#12132D] text-lg font-extrabold fontMulish">What will a mars habitat force that <br>impact in our daily life!!!</h2>
-              <p class="mb-4 text-[#12132D] fontMulish">Yes, you can run unit tests and view the <br>results directly within the app. </p>
-              <div class="flex gap-x-4"><img class="w-11 h-11 rounded-full" src="./images/shovan.jpg" alt=""> <div><h3 class="fontMulish font-bold text-[#12132D]">Cameron Williamson</h3>
-              <p class="fontMulish text-sm text-[#12132D99]">Unknown</p></div></div>
-            </div>
-          </div>
-          <div class="card max-w-96 bg-white shadow-xl border border-[#12132D26] p-6">
-            <figure><img class="rounded-3xl" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-            <div>
-              <div class="flex gap-x-2 mt-6 mb-3"><img src="./images/calender.png" alt=""><p class="fontMulish text-[#12132D99]">29 January 2024</p></div>
-              <h2 class="mb-3 text-[#12132D] text-lg font-extrabold fontMulish">What will a mars habitat force that <br>impact in our daily life!!!</h2>
-              <p class="mb-4 text-[#12132D] fontMulish">Yes, you can run unit tests and view the <br>results directly within the app. </p>
-              <div class="flex gap-x-4"><img class="w-11 h-11 rounded-full" src="./images/shovan.jpg" alt=""> <div><h3 class="fontMulish font-bold text-[#12132D]">Cameron Williamson</h3>
-              <p class="fontMulish text-sm text-[#12132D99]">Unknown</p></div></div>
-            </div>
-          </div>
-          <div class="card max-w-96 bg-white shadow-xl border border-[#12132D26] p-6">
-            <figure><img class="rounded-3xl" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-            <div>
-              <div class="flex gap-x-2 mt-6 mb-3"><img src="./images/calender.png" alt=""><p class="fontMulish text-[#12132D99]">29 January 2024</p></div>
-              <h2 class="mb-3 text-[#12132D] text-lg font-extrabold fontMulish">What will a mars habitat force that <br>impact in our daily life!!!</h2>
-              <p class="mb-4 text-[#12132D] fontMulish">Yes, you can run unit tests and view the <br>results directly within the app. </p>
-              <div class="flex gap-x-4"><img class="w-11 h-11 rounded-full" src="./images/shovan.jpg" alt=""> <div><h3 class="fontMulish font-bold text-[#12132D]">Cameron Williamson</h3>
-              <p class="fontMulish text-sm text-[#12132D99]">Unknown</p></div></div>
-            </div>
-          </div> -->
         </div>
       </section>
     </main>

@@ -1,13 +1,21 @@
-
 const loadData = async(category)=>{
     const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`);
 const data = await response.json();
 const posts = data.posts; // data ekta object jekane posts and messaes ache
 // data.posts means posts key jeta actullay ekta array ta access kora
-displayPosts(posts);
-}
-const displayPosts = posts => {
 
+const letsDiscussPostContainer = document.getElementById('postContainer');
+    /// clear the container at the biginning of the load.
+    letsDiscussPostContainer.innerHTML = "";
+const load = document.getElementById('loader');
+load.classList.remove('hidden');
+setTimeout(()=>{
+    displayPosts(posts);
+    load.classList.add('hidden');
+},2000);
+}
+
+const displayPosts = posts => {
     const letsDiscussPostContainer = document.getElementById('postContainer');
     /// clear the container at the biginning of the load.
     letsDiscussPostContainer.innerHTML = "";
@@ -109,14 +117,7 @@ const displayLatestPosts = data => {
 }
 
 loadLatestPostData();
-// let postCardArray =document.querySelectorAll(".card");
-// for(let i = 0; i < postCardArray.length; i++){
-//     const postCard = postCardArray[i];
-//     postCard.addEventListener("click",function(){
-//         let postTitle = postCard.querySelector("h1").innerHTML;
-//         console.log(postTitle);
-//     })
-// }
+
 let counter = 0;
 const addTitle = async(id)=>{
     const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
