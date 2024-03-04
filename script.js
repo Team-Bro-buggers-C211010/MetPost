@@ -35,7 +35,7 @@ const displayPosts = posts => {
                   <p>#${post.category}</p>
                   <p>Author : ${post.author.name}</p>
                 </div>
-                <h1 class="text-[#12132D] text-lg md:text-xl font-bold fontMulish mb-4">${post.title}</h1>
+                <h1 class="text-[#12132D] text-lg md:text-xl font-bold fontMulish mb-4 max-w-[569px] md:w-[569px]">${post.title}</h1>
                 <p class="text-[#12132D99] text-base font-normal mb-5">
                   ${post.description}
                 </p>
