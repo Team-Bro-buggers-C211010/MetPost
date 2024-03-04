@@ -64,7 +64,7 @@ const displayPosts = posts => {
                       <p>${post.posted_time} min</p>
                     </div>
                   </div>
-                  <a id='${post.id}' onclick="addTitle(${post.id})"><img src="./images/email 1.png" alt=""></a>
+                  <a id='${post.id}' onclick="addTitle(${post.id})"><img src="./images/email 1.png" alt="" class="hover:cursor-pointer"></a>
                   </div>
                   </div>
                   <div>
@@ -83,7 +83,7 @@ displayLatestPosts(data);
 const displayLatestPosts = data => {
     const latestPostContainer = document.getElementById("latestPostContain");
     data.forEach(post =>{
-        console.log(post);
+        /// console.log(post);
         let designation,date;
         if(post.author.designation === undefined)
         {
