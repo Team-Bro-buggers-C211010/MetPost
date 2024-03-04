@@ -1,3 +1,4 @@
+
 const loadData = async(category)=>{
     const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`);
 const data = await response.json();
@@ -9,7 +10,7 @@ const displayPosts = posts => {
 
     const letsDiscussPostContainer = document.getElementById('postContainer');
     /// clear the container at the biginning of the load.
-    letsDiscussPostContainer.innerHTML = "";
+    //letsDiscussPostContainer.innerHTML = "";
     posts.forEach(post =>{
         console.log(post);
         const activeStatus = post.isActive;
@@ -21,7 +22,7 @@ const displayPosts = posts => {
             color = "#FF3434"
         }
         const postCard =document.createElement('div');
-        postCard.classList =`bg-[#F3F3F5] w-full p-10 rounded-3xl flex gap-x-6 gap-y-4 flex-col md:flex-row`;
+        postCard.classList =`bg-[#F3F3F5] w-full p-10 rounded-3xl flex gap-x-6 gap-y-4 flex-col md:flex-row card`;
         postCard.innerHTML= `
         <div
                 class="bg-white w-20 h-20 rounded-2xl bg-[url('${post.image}')] bg-cover bg-no-repeat relative"
@@ -55,7 +56,7 @@ const displayPosts = posts => {
                       <p>${post.posted_time} min</p>
                     </div>
                   </div>
-                  <img src="./images/email 1.png" alt="">
+                  <a id='${post.id}' onclick="addTitle(${post.id})"><img src="./images/email 1.png" alt=""></a>
                   </div>
                   </div>
                   <div>
@@ -64,4 +65,39 @@ const displayPosts = posts => {
         letsDiscussPostContainer.appendChild(postCard);
     })
 }
+// let postCardArray =document.querySelectorAll(".card");
+// for(let i = 0; i < postCardArray.length; i++){
+//     const postCard = postCardArray[i];
+//     postCard.addEventListener("click",function(){
+//         let postTitle = postCard.querySelector("h1").innerHTML;
+//         console.log(postTitle);
+//     })
+// }
+let counter = 0;
+const addTitle = async(id)=>{
+    const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
+const data = await response.json();
+const posts = data.posts; // data ekta object jekane posts and messaes ache
+// data.posts means posts key jeta actullay ekta array ta access kora
+const titleContainer =document.getElementById('titleContainer');
+posts.forEach(post=>{
+    if(post.id == id){
+        counter++;
+        const titleDiv = document.createElement('div');
+        titleDiv.classList = `flex justify-between bg-white rounded-2xl p-4 mb-4`;
+        titleDiv.innerHTML=`
+        <div><h1>${post.title}</h1></div>
+        <div class="flex items-center gap-2 mx-4"><img src="./images/views.png" alt=""><p>${post.view_count}</p></div>
+        `;
+        setReadCounter();
+        titleContainer.appendChild(titleDiv);
+
+    }
+})
+} 
+function setReadCounter(){
+    const countRead = document.getElementById('addToTitleCount');
+    countRead.innerHTML = counter;
+}
 loadData("");
+
